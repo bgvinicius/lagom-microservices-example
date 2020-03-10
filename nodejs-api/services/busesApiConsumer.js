@@ -1,7 +1,9 @@
 const axios = require('axios');
+const { SPTRANS_VERSION } = require('./utils/constants');
 
+const baseURL = `http://api.olhovivo.sptrans.com.br/${SPTRANS_VERSION}`;
 const BusesAPIConsumer = axios.create({
-    baseURL: `http://api.olhovivo.sptrans.com.br/v2.1`,
+    baseURL,
     withCredentials: true
 });
 
