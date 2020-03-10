@@ -3,6 +3,9 @@ import cx from 'classnames';
 import mainCtx from '../../contexts/mainCtx';
 import InsightLogo from '../../assets/logo-insight.png';
 import "./styles.scss";
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const SideMenu: FunctionComponent = props => {
     const { menuOpen, setMenuOpen } = useContext(mainCtx);
@@ -12,14 +15,13 @@ const SideMenu: FunctionComponent = props => {
     };
 
     return (
+        // TODO: clean this, now we don't open the menu anymore.
         <div className={cx("side-menu-container", {
             open: menuOpen
         })}>
-            <div onClick={toggleMenu} className="menu-icon">
-                <span className="menu-icon-line" />
-                <span className="menu-icon-line" />
-                <span className="menu-icon-line" />
-            </div>
+            <Link to="/" onClick={toggleMenu} className="menu-icon">
+                <FontAwesomeIcon icon={faArrowLeft} size="4x"/>
+            </Link>
             <div className="side-menu-body">
                 
             </div>

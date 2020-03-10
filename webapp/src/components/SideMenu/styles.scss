@@ -17,11 +17,12 @@ $menu-size: 70px;
         width: $menu-size;
         height: $menu-size;
         display: flex;
-        justify-content: space-around;
-        padding: 1.3rem 0 1.3rem 0;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
         transition: background 0.2s ease-out;
         cursor: pointer;
+        color: white;
 
         .menu-icon-line {
             width: 50%;
