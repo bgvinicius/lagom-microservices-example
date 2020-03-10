@@ -78,12 +78,15 @@ const BusLineScreen: FunctionComponent = () => {
     });
 
     return (
-        <BusLineMap
-            buses={buses}
-            stops={stops}
-            originalCenter={position}
-            routePath={routePath}
-        />
+        <>
+            <SideMenu />
+            <BusLineMap
+                buses={buses}
+                stops={stops}
+                originalCenter={position}
+                routePath={routePath}
+            />
+        </>
     );
 };
 
@@ -100,7 +103,6 @@ const MapScreen: FunctionComponent = () => {
             <OverlayBorder />
             <OverlayLoading loading={loading} />
             <div className="app-wrapper">
-                <SideMenu />
                 <Switch>
                     <Route path="/line/:busLine/:busDirection" component={BusLineScreen} />
                     <Redirect from="/line/:busLine" to='/line/:busLine/1' />
