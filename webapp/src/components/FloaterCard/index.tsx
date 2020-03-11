@@ -6,21 +6,14 @@ import "./styles.scss";
 interface FloaterCardProps extends Partial<DraggableProps> {};
 
 const FloaterCard: FunctionComponent<FloaterCardProps> = ({ handle, children, defaultPosition={ x: 0, y: 0 } }) => {
-    const { menuOpen } = useContext(mainCtx);
     const cardRef = useRef<HTMLDivElement>(null);
     const [cardDim, setCardDim] = useState<[number, number]>([0, 0]);
     const [relativePosition, setRelativePosition] = useState<[number, number]>([0, 0]);
-    const [position, setPosition] = useState<[number, number]>([0, 0]);
+    const [position, setPosition] = 
+        useState<[number, number]>([window.innerWidth / 10, window.innerHeight / 10]);
     const [rotation, setRotation] = useState<number>(0);
     const [isDragging, setIsDragging] = useState<boolean>(false);
-    const menuSize = 400;
-    const boundsMargin = [20, 20, 20, 80];
-
-    useEffect(() => {
-        if (position[0] < menuSize + boundsMargin[3]) {
-            setPosition([menuSize + boundsMargin[3], position[1]]);
-        }
-    }, [menuOpen]);
+    const boundsMargin = [20, 20, 20, 20];
 
     const updateShadow = () => {
         if (cardRef.current) {
@@ -74,7 +67,7 @@ const FloaterCard: FunctionComponent<FloaterCardProps> = ({ handle, children, de
                 ]);
             }}
             bounds={{
-                left: boundsMargin[3] + (menuOpen ? menuSize : 0),
+                left: boundsMargin[3],
                 right: window.innerWidth - cardDim[0] - boundsMargin[1],
                 top: boundsMargin[0],
                 bottom: window.innerHeight - cardDim[1] - boundsMargin[2]

@@ -1,8 +1,6 @@
 import React, { FunctionComponent, useState, useContext } from 'react';
 import { LatLngTuple } from 'leaflet';
 import { Map, TileLayer, ZoomControl } from 'react-leaflet';
-import cx from 'classnames';
-import mainCtx from '../../contexts/mainCtx';
 
 interface SVGGradientProps {
     id: string,
@@ -29,15 +27,10 @@ interface BusMapProps {
     center?: LatLngTuple
 };
 const BusMap: FunctionComponent<BusMapProps> = ({ children, center, bounds }) => {
-    const {
-        menuOpen
-    } = useContext(mainCtx);
     const [theme, setTheme] = useState<string>('light');
     
     return (
-        <div className={cx("bus-map-wrapper", {
-            'menu-open': menuOpen
-        })}>
+        <div className={"bus-map-wrapper"}>
             <SVGGradient
                 rotation={0}
                 id='primary-gradient'

@@ -6,8 +6,6 @@ interface MainContext {
     setCurrentLine: (busLine: BusLine) => void;
     currentDirection: BusDirection | undefined;
     setCurrentDirection: (busDirection: BusDirection) => void;
-    menuOpen: boolean;
-    setMenuOpen: (menuOpen: boolean) => void;
     stopsVisibility: boolean;
     setStopsVisibility: (stopsVisible: boolean) => void;
     busesVisibility: boolean;
@@ -21,8 +19,6 @@ export default React.createContext<MainContext>({
     setCurrentLine: () => {},
     currentDirection: undefined,
     setCurrentDirection: () => {},
-    menuOpen: false,
-    setMenuOpen: () => {},
     stopsVisibility: true,
     setStopsVisibility: () => {},
     circleRadius: 500,
