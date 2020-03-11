@@ -1,6 +1,5 @@
-import React, { FunctionComponent, useRef, useEffect, useState, useContext } from 'react';
+import React, { FunctionComponent, useRef, useEffect, useState } from 'react';
 import Draggable, { DraggableProps } from 'react-draggable';
-import mainCtx from '../../contexts/mainCtx';
 import "./styles.scss";
 
 interface FloaterCardProps extends Partial<DraggableProps> {};
