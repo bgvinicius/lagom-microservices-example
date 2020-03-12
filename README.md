@@ -1,3 +1,13 @@
+# Link para vídeo explicando a solução
+
+[Vídeo explicando a solução](https://youtu.be/qftfFw-m4_c)
+
+# Propostas escolhidas
+
+No **frontend**, optei por implementar a **proposta 2**, já no **backend**, implementei a **proposta 1**.
+
+[Link pra descrição do desafio](https://docs.google.com/document/d/1g_DvPw7J1LlYsm8J_mYj3At0vxPYKbu7On4lB4ihuUk)
+
 # Aplicação Demo
 
 Esta aplicação foi criada com o intuito de demonstrar as diferenças e características entre aplicações monolíticas e as que seguem a arquitetura de microsserviços, representadas respectivamente pelas tecnologias [Node.js](https://nodejs.org/en/) e [Lagom](https://www.lagomframework.com/) em sua versão para a linguagem Scala.
